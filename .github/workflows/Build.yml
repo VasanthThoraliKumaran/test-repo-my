@@ -8,11 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Create a file with data to pass
-      run: echo "Hello from the parent workflow!" > output.txt
-
-    - name: Upload the artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: parent-output
-        path: output.txt
+    - name: Run
+      run: echo "Hello from the parent workflow!"
