@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  workflow_dispatch:  # Trigger this workflow manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create a file with data to pass
+      run: echo "Hello from the parent workflow!" > output.txt
+
+    - name: Upload the artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: parent-output
+        path: output.txt
